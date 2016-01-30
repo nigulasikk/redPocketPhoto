@@ -1,0 +1,4 @@
+*{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent}
+.blur-bottom{-webkit-filter:blur(10px);filter:blur(10px)}
+.blur-bottom,.blur-top{position:absolute;top:0;left:0}
+.change{position:fixed;bottom:50px;left:20px}

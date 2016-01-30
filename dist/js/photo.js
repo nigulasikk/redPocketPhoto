@@ -1,0 +1,1 @@
+$(".change").click(function(t){var p=$(".blur-top").width(),c=$(".blur-top").height(),r=Math.random()*(p-70),a=Math.random()*(c-70);$(".blur-top").css("clip","rect("+a+"px "+(r+50)+"px "+(a+50)+"px "+r+"px)")});
