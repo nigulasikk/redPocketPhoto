@@ -7,7 +7,7 @@ var thisX, thisY;
  * [i ]用于验证通过后动画效果
  * @type {Number}
  */
-var i=1;
+var i = 1;
 /**
  * 定时器
  */
@@ -22,18 +22,31 @@ var imgHeight = $(".blur-top").height();
 getRandomVisibleArea();
 
 $(".ok").click(function(event) {
-    timer = setInterval(function() {
-        console.log('定时器执行');
-        setBlurTransition();
+    if ($("#answer").val() == "整个世界") {
+        timer = setInterval(function() {
+            console.log('定时器执行');
+            setBlurTransition();
 
-    }, 20);
+        }, 20);
+    } else {
+        alert('去问中央');
+    }
+
 });
+
+$(".change").click(function(event) {
+    getRandomVisibleArea();
+
+
+
+});
+
 /**
  * 程序初始化得到
  * @return {[type]} [description]
  */
-function getRandomVisibleArea(){
-// 随机图片显示位置
+function getRandomVisibleArea() {
+    // 随机图片显示位置
     var leftTopPointX = Math.random() * (imgWidth - 70);
     var leftTopPointY = Math.random() * (imgHeight - 70);
     thisX = leftTopPointX;
@@ -46,11 +59,11 @@ function getRandomVisibleArea(){
 function setBlurTransition() {
     var r = 30 * (i++);
     $(".blur-top").css("clip", "rect(" + (thisY - r) + "px " + (thisX + 50 + r) + "px " + (thisY + 50 + r) + "px " + (thisX - r) + "px)");
-   /**
-    * 当整张图片已经展现，则清理定时器
-    * @param  {[type]} ((thisY -             r) < 0) &&        ((thisX - r) < 0) &&        ((thisY + 50 + r) > imgHeight) &&        ((thisX + 50 + r) > imgWidth) [description]
-    * @return {[type]}         [description]
-    */
+    /**
+     * 当整张图片已经展现，则清理定时器
+     * @param  {[type]} ((thisY -             r) < 0) &&        ((thisX - r) < 0) &&        ((thisY + 50 + r) > imgHeight) &&        ((thisX + 50 + r) > imgWidth) [description]
+     * @return {[type]}         [description]
+     */
     if (
         ((thisY - r) < 0) &&
         ((thisX - r) < 0) &&

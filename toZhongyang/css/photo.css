@@ -1,0 +1,2 @@
+.blur-bottom{-webkit-filter:blur(10px);filter:blur(10px)}
+.blur-bottom,.blur-top{position:absolute;top:0;left:0}
